@@ -48,10 +48,6 @@
         @include('admin.layouts.includes.navigation')
         <!-- ========== Left Sidebar End ========== -->
 
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
         <div class="content-page">
             <div class="content">
                 <div class="container-fluid">
