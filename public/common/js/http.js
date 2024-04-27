@@ -1,3 +1,11 @@
+function showLoadingAnimation() {
+    $(".loading-overlay").show();
+}
+
+function hideLoadingAnimation() {
+    $(".loading-overlay").hide();
+}
+
 $(function () {
     $.ajaxSetup({
         headers: {
@@ -126,6 +134,7 @@ function ajaxStoreModal(e, form, modal) {
     e.preventDefault();
     // let formData = $(form).serialize();
     let formData = new FormData(form);
+    showLoadingAnimation();
     $.ajax({
         url: $(form).attr("action"),
         type: "POST",
@@ -133,6 +142,7 @@ function ajaxStoreModal(e, form, modal) {
         contentType: false,
         processData: false,
         success: (res) => {
+            hideLoadingAnimation();
             swal({
                 icon: "success",
                 title: "Success",
@@ -146,6 +156,7 @@ function ajaxStoreModal(e, form, modal) {
             });
         },
         error: (err) => {
+            hideLoadingAnimation();
             swal({
                 icon: "error",
                 title: "Oops...",
@@ -158,6 +169,7 @@ function ajaxStore(e, form) {
     e.preventDefault();
     // let formData = $(form).serialize();
     let formData = new FormData(form);
+    showLoadingAnimation();
     $.ajax({
         url: $(form).attr("action"),
         type: "POST",
@@ -165,6 +177,7 @@ function ajaxStore(e, form) {
         contentType: false,
         processData: false,
         success: (res) => {
+            hideLoadingAnimation();
             swal({
                 icon: "success",
                 title: "Success",
@@ -179,6 +192,7 @@ function ajaxStore(e, form) {
             // });
         },
         error: (err) => {
+            hideLoadingAnimation();
             swal({
                 icon: "error",
                 title: "Oops...",
